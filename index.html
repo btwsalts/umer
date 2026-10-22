@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#0c090b" />
     <meta
       name="description"
-      content="Umer is a cybersecurity student exploring web development, Python, and network security through practical projects like NetScan."
+      content="Explore Muhammad Umer's cybersecurity and web development projects, including NetScan, PhishGuard, Sentinel, and Watchtower."
     />
     <meta
       property="og:title"
@@ -43,8 +43,9 @@
         </button>
         <nav class="nav" id="site-nav" aria-label="Main navigation">
           <a href="#about"><span>01.</span> about</a
-          ><a href="#work"><span>02.</span> work</a
-          ><a href="#contact"><span>03.</span> contact</a>
+          ><a href="#focus"><span>02.</span> focus</a
+          ><a href="#work"><span>03.</span> projects</a
+          ><a href="#contact"><span>04.</span> contact</a>
           <a class="nav-contact" href="#contact">Connect <span>↗</span></a>
         </nav>
       </header>
@@ -55,11 +56,11 @@
             <h1>Umer.</h1>
             <h2>Web development &amp;<br />cybersecurity.</h2>
             <p>
-              Just a guy who loves tech, learning new things, and plays games.
+              Just a guy who loves tech, learning new things, and playing games.
             </p>
             <div class="actions">
-              <a class="button" href="#work">See NetScan <span>↓</span></a
-              ><a class="button secondary" href="#contact">Connect</a>
+              <a class="button" href="#work">Explore projects <span>↓</span></a
+              ><a class="button secondary" href="#about">About me</a>
             </div>
           </div>
           <div
@@ -94,7 +95,7 @@ ASCII portrait needs JavaScript to appear.</pre
               </p>
             </div>
             <div>
-              <div class="stack-title">Currently working with</div>
+              <div class="stack-title">Tools I’m learning and using</div>
               <ul class="stack">
                 <li>Python</li>
                 <li>C++</li>
@@ -106,12 +107,56 @@ ASCII portrait needs JavaScript to appear.</pre
             </div>
           </div>
         </section>
-        <section id="work">
+        <section id="focus">
           <div class="section-head">
             <div class="section-kicker">02.</div>
+            <h2>Areas of focus</h2>
+            <div class="rule"></div>
+          </div>
+          <p class="section-intro">
+            I’m building my foundation through hands-on projects, labs, and
+            continued study.
+          </p>
+          <div class="focus-grid">
+            <article class="focus-card">
+              <span class="focus-index">01 / Offensive security</span>
+              <h3>Understand how systems can be tested.</h3>
+              <ul>
+                <li>Web security</li>
+                <li>Network security</li>
+                <li>Penetration testing fundamentals</li>
+                <li>CTF practice</li>
+              </ul>
+            </article>
+            <article class="focus-card">
+              <span class="focus-index">02 / Defense &amp; forensics</span>
+              <h3>Learn to spot and investigate activity.</h3>
+              <ul>
+                <li>Log analysis</li>
+                <li>File integrity monitoring</li>
+                <li>Digital forensics fundamentals</li>
+                <li>Incident analysis</li>
+              </ul>
+            </article>
+            <article class="focus-card">
+              <span class="focus-index">03 / Software engineering</span>
+              <h3>Build tools that are clear and useful.</h3>
+              <ul>
+                <li>Python &amp; C++</li>
+                <li>HTML, CSS &amp; JavaScript</li>
+                <li>Flask &amp; APIs</li>
+                <li>Linux, Git &amp; GitHub</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <section id="work">
+          <div class="section-head">
+            <div class="section-kicker">03.</div>
             <h2>Selected work</h2>
             <div class="rule"></div>
           </div>
+          <h3 class="project-group-title">Featured project · NetScan</h3>
           <div class="projects">
             <article class="card project-featured">
               <div
@@ -158,8 +203,8 @@ ASCII portrait needs JavaScript to appear.</pre
                       href="https://btwsalts.github.io/net-scan/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open the NetScan live demo"
-                      >Live ↗</a
+                      aria-label="Open the NetScan interface preview"
+                      >Preview ↗</a
                     >
                   </div>
                 </div>
@@ -187,9 +232,294 @@ ASCII portrait needs JavaScript to appear.</pre
               </div>
             </article>
           </div>
+          <h3 class="project-group-title project-group-secondary">
+            More security projects
+          </h3>
+          <div class="project-grid security-projects">
+            <article class="project-card project-card-featured">
+              <div class="project-card-meta">
+                <span class="project-type">SOC platform</span>
+                <span class="project-status">In progress · Milestone 2</span>
+              </div>
+              <h3>Watchtower</h3>
+              <p>
+                A modular security operations platform. The current API work
+                includes accounts, workspace access, roles, event ingestion, and
+                audit records.
+              </p>
+              <ul class="project-highlights">
+                <li>FastAPI, JWT, Argon2</li>
+                <li>Workspace-scoped events and access control</li>
+                <li>SQLite locally, PostgreSQL configuration</li>
+              </ul>
+              <p class="project-caveat">
+                The API is not publicly deployed; the dashboard preview uses
+                fictional data.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/watchtower"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source code ↗
+                </a>
+                <a
+                  href="https://btwsalts.github.io/watchtower/dashboard.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Dashboard preview ↗
+                </a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Web security</span>
+                <span class="project-status">Python · Flask</span>
+              </div>
+              <h3>PhishGuard</h3>
+              <p>
+                Checks a URL’s structure for phishing indicators such as raw
+                IPs, embedded credentials, punycode, and suspicious subdomains.
+              </p>
+              <p class="project-caveat">
+                Uses local heuristics and does not visit the destination.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/phishguard"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source code ↗
+                </a>
+                <a
+                  href="https://btwsalts.github.io/phishguard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interface preview ↗
+                </a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Log analysis</span>
+                <span class="project-status">Python · Flask</span>
+              </div>
+              <h3>Sentinel</h3>
+              <p>
+                A mini SIEM that parses uploaded logs and applies simple rules
+                to flag repeated failed logins and server errors.
+              </p>
+              <p class="project-caveat">
+                Learning project with sample logs and basic detection rules.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/sentinel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source code ↗
+                </a>
+                <a
+                  href="https://btwsalts.github.io/sentinel/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Interface preview ↗
+                </a>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Password security</span
+                ><span class="project-status">Python · Flask</span>
+              </div>
+              <h3>Password Audit</h3>
+              <p>
+                Demonstrates offline wordlist testing against supplied password
+                hashes in an authorized lab environment.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/password-audit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/password-audit/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Interface preview ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Defensive security</span
+                ><span class="project-status">Python · CLI</span>
+              </div>
+              <h3>File Integrity Monitor</h3>
+              <p>
+                Uses SHA-256 baselines to identify files added, changed, or
+                removed from a monitored directory.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/file-integrity-monitor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/file-integrity-monitor/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Project page ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Application security</span
+                ><span class="project-status">Local prototype</span>
+              </div>
+              <h3>Vault</h3>
+              <p>
+                A local secrets-manager prototype with account authentication,
+                password hashing, encrypted values, and an activity log.
+              </p>
+              <p class="project-caveat">
+                Educational prototype; not intended for real secrets.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/vault"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/vault/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Interface preview ↗</a
+                >
+              </div>
+            </article>
+          </div>
+          <h3 class="project-group-title project-group-secondary">
+            Web projects &amp; experiments
+          </h3>
+          <div class="project-grid web-projects">
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Interactive maps</span
+                ><span class="project-status">JavaScript · Leaflet</span>
+              </div>
+              <h3>Echo</h3>
+              <p>
+                A local-first memory map for pinning personal stories to places,
+                with search, favorites, and import/export.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/echo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/echo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live project ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Streaming interface</span
+                ><span class="project-status">Frontend prototype</span>
+              </div>
+              <h3>SnacknChill</h3>
+              <p>
+                A responsive movie and series browsing interface with search,
+                filters, a featured carousel, and continue-watching history.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/snacknchill"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/snacknchill/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live project ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">3D portfolio</span
+                ><span class="project-status">Three.js</span>
+              </div>
+              <h3>AlterSalts</h3>
+              <p>
+                An experimental creative portfolio with a 3D computer model,
+                motion, and separate work, about, and contact pages.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/altersalts"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/altersalts/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live project ↗</a
+                >
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-card-meta">
+                <span class="project-type">Product concept</span
+                ><span class="project-status">Frontend concept</span>
+              </div>
+              <h3>Oak &amp; Grain</h3>
+              <p>
+                A fictional woodworking studio website with a project gallery
+                and a multi-step, browser-saved commission brief builder.
+              </p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/btwsalts/wood"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Source code ↗</a
+                >
+                <a
+                  href="https://btwsalts.github.io/wood/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live concept ↗</a
+                >
+              </div>
+            </article>
+          </div>
         </section>
         <section class="contact" id="contact">
-          <span class="section-kicker">03. Contact</span>
+          <span class="section-kicker">04. Contact</span>
           <h2>Get in touch.</h2>
           <p>Want to talk about a project? Email me.</p>
           <a class="button" href="mailto:muhammadumerwork2006@gmail.com"
