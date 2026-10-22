@@ -6,13 +6,29 @@
     <meta name="theme-color" content="#0c090b" />
     <meta
       name="description"
-      content="Umer's portfolio: web projects, including NetScan, a small Flask-based TCP port scanner."
+      content="Umer is a cybersecurity student exploring web development, Python, and network security through practical projects like NetScan."
+    />
+    <meta
+      property="og:title"
+      content="Umer | Web Development &amp; Cybersecurity"
+    />
+    <meta
+      property="og:description"
+      content="A cybersecurity student building practical web and network tools."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
     />
     <title>Umer</title>
     <link rel="icon" type="image/png" href="petra-portrait.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="ambient" aria-hidden="true"><span></span><span></span></div>
     <div class="shell">
       <header class="topbar">
         <a class="brand" href="#home" aria-label="Umer, home">!</a>
@@ -35,13 +51,11 @@
       <main>
         <section class="hero" id="home">
           <div class="hero-copy">
-            <div class="eyebrow">Web projects / networking</div>
+            <div class="eyebrow">Hi, I am</div>
             <h1>Umer.</h1>
-            <h2>Building web tools,<br />one project at a time.</h2>
+            <h2>Web development &amp;<br />cybersecurity.</h2>
             <p>
-              I’m learning by making things. My current project is
-              <strong>NetScan</strong>, a small web app for checking common TCP
-              ports on an IPv4 address.
+              Just a guy who loves tech, learning new things, and plays games.
             </p>
             <div class="actions">
               <a class="button" href="#work">See NetScan <span>↓</span></a
@@ -51,10 +65,12 @@
           <div
             class="art"
             aria-label="Interactive ASCII portrait based on the Petra character artwork. Move your pointer over it to make individual characters wobble like jelly. Use arrow keys while focused to nudge it."
-            role="img"
+            role="group"
             tabindex="0"
           >
-            <pre id="ascii" aria-hidden="true"></pre>
+            <pre id="ascii" class="ascii-fallback" aria-hidden="true">
+ASCII portrait needs JavaScript to appear.</pre
+            >
           </div>
         </section>
         <section id="about">
@@ -66,24 +82,25 @@
           <div class="about-grid">
             <div class="about-copy">
               <p>
-                I’m Umer. I learn by making things and working through problems.
-                NetScan checks 16 common TCP ports for an IPv4 address and
-                reports the likely services for open ports.
+                I’m interested in how software works, from the interface people
+                use to the systems behind it. Building projects helps me test
+                ideas, solve problems, and grow my skills in web development and
+                cybersecurity.
               </p>
               <p>
-                Building it taught me how to connect a browser interface to a
-                Flask API and Python TCP scanner. I’m still learning the
-                networking side.
+                NetScan has helped me practice connecting a browser interface to
+                a Flask API and building a Python TCP scanner. I’m continuing to
+                develop my skills in software and network security.
               </p>
             </div>
             <div>
-              <div class="stack-title">Tools I used:</div>
+              <div class="stack-title">Currently working with</div>
               <ul class="stack">
                 <li>Python</li>
+                <li>C++</li>
                 <li>Flask</li>
                 <li>HTML, CSS &amp; JavaScript</li>
                 <li>TCP networking</li>
-                <li>Responsive interfaces</li>
                 <li>Git &amp; GitHub</li>
               </ul>
             </div>
@@ -92,11 +109,40 @@
         <section id="work">
           <div class="section-head">
             <div class="section-kicker">02.</div>
-            <h2>Featured project</h2>
+            <h2>Selected work</h2>
             <div class="rule"></div>
           </div>
           <div class="projects">
             <article class="card project-featured">
+              <div
+                class="project-preview"
+                role="img"
+                aria-label="Preview of the NetScan target input screen"
+              >
+                <div class="preview-topbar">
+                  <span class="preview-brand"
+                    ><i aria-hidden="true"></i> NETSCAN</span
+                  >
+                  <span class="preview-status"
+                    >TCP SCANNER <b aria-hidden="true">●</b></span
+                  >
+                </div>
+                <div class="preview-content">
+                  <span class="preview-kicker">NETWORK SECURITY TOOL</span>
+                  <h3>Discover open ports.</h3>
+                  <p>Enter an IPv4 address to check common TCP ports.</p>
+                  <div class="preview-label">TARGET IP</div>
+                  <div class="preview-input-row">
+                    <span>Enter an IPv4 address</span>
+                    <span class="preview-scan"
+                      >SCAN <b aria-hidden="true">→</b></span
+                    >
+                  </div>
+                  <span class="preview-note"
+                    >Only scan systems you own or have permission to test.</span
+                  >
+                </div>
+              </div>
               <div class="project-copy">
                 <div class="card-top">
                   <span class="project-index">01 / Network tool</span>
@@ -119,9 +165,10 @@
                 </div>
                 <h3>NetScan</h3>
                 <p>
-                  Enter an IPv4 address to check 16 common TCP ports. NetScan
-                  reports open ports and their likely services through a simple
-                  browser interface.
+                  A web-based scanner that checks 16 common TCP ports on an IPv4
+                  address and reports open ports with their likely services.
+                  Built with a Flask API, Python, and a responsive browser
+                  interface.
                 </p>
                 <div class="tags">
                   <span>Python</span><span>Flask</span><span>TCP</span>
@@ -136,9 +183,7 @@
                   <li><span>03</span>TCP checks</li>
                   <li><span>04</span>Results</li>
                 </ol>
-                <p class="project-note">
-                  Made for learning and authorized testing.
-                </p>
+                <p class="project-note">For learning and authorized testing.</p>
               </div>
             </article>
           </div>
@@ -148,8 +193,9 @@
           <h2>Get in touch.</h2>
           <p>Want to talk about a project? Email me.</p>
           <a class="button" href="mailto:muhammadumerwork2006@gmail.com"
-            >muhammadumerwork2006@gmail.com <span>↗</span></a
+            >Email me <span>↗</span></a
           >
+          <p class="contact-email">muhammadumerwork2006@gmail.com</p>
           <div class="social-links" aria-label="LinkedIn and GitHub profiles">
             <a
               href="https://www.linkedin.com/in/muhammad-umer-3607ab371/"

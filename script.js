@@ -2,6 +2,8 @@
   const stage = document.querySelector(".art");
   const output = document.getElementById("ascii");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  output.replaceChildren();
+  output.classList.remove("ascii-fallback");
   const portrait = [
     {
       line: "                                 .     ...      ",
@@ -213,6 +215,7 @@
   }
 
   function rememberPointer(event) {
+    if (reducedMotion.matches) return;
     pointerDX = event.clientX - pointerX;
     pointerDY = event.clientY - pointerY;
     pointerX = event.clientX;
@@ -231,6 +234,7 @@
   });
 
   stage.addEventListener("keydown", (event) => {
+    if (reducedMotion.matches) return;
     const directions = {
       ArrowLeft: [-240, 0],
       ArrowRight: [240, 0],
@@ -249,12 +253,23 @@
 
   function animate(time) {
     animationFrame = 0;
+    if (reducedMotion.matches) {
+      pointerActive = false;
+      glyphs.forEach((glyph) => {
+        glyph.x = 0;
+        glyph.y = 0;
+        glyph.vx = 0;
+        glyph.vy = 0;
+        glyph.element.style.transform = "";
+      });
+      return;
+    }
     const delta = previousTime
       ? Math.min((time - previousTime) / 1000, 0.025)
       : 1 / 60;
     previousTime = time;
-    const spring = reducedMotion.matches ? 150 : 92;
-    const damping = Math.exp(-(reducedMotion.matches ? 15 : 7) * delta);
+    const spring = 92;
+    const damping = Math.exp(-7 * delta);
     const radius = 76;
     let unsettled = false;
 
