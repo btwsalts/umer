@@ -392,6 +392,9 @@ section {
   gap: 20px 16px;
   align-items: start;
 }
+#art .section-head h2 {
+  color: var(--accent);
+}
 .art-piece {
   position: relative;
   min-width: 0;
@@ -464,7 +467,7 @@ section {
 }
 .art-piece figcaption strong {
   flex: 1;
-  color: var(--ink);
+  color: var(--accent);
   font: 500 11px/1.35 var(--sans);
 }
 .art-arrow {
