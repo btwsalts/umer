@@ -392,45 +392,6 @@ section {
   gap: 20px 16px;
   align-items: start;
 }
-.art-intro {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin: -11px 0 25px;
-  padding: 14px 16px;
-  border: 1px solid var(--line);
-  background: linear-gradient(100deg, rgba(227, 27, 54, 0.07), transparent 55%), #100d0f;
-}
-.art-intro p {
-  flex: 1;
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-}
-.art-count {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--muted);
-  font: 9px var(--mono);
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.art-intro > a {
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  color: var(--ink);
-  font: 9px var(--mono);
-  white-space: nowrap;
-}
-.art-intro > a span {
-  margin-left: 5px;
-  color: var(--accent);
-}
-.art-intro > a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
 .art-piece {
   position: relative;
   min-width: 0;
@@ -516,6 +477,14 @@ section {
   color: var(--accent);
   opacity: 1;
   transform: translate(2px, -2px);
+}
+.art-source {
+  margin-top: 18px;
+  color: var(--accent);
+  font: 10px var(--mono);
+}
+.art-source a:hover {
+  color: var(--ink);
 }
 .web-projects {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1142,13 +1111,6 @@ section {
   }
   .art-gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .art-intro {
-    flex-wrap: wrap;
-    gap: 10px 14px;
-  }
-  .art-intro p {
-    flex-basis: 100%;
   }
   .card {
     min-height: 0;
