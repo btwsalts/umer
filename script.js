@@ -336,6 +336,57 @@
     });
   }
 
+  const ctfForm = document.getElementById("ctf-form");
+  const ctfFlag = document.getElementById("ctf-flag");
+  const ctfFeedback = document.getElementById("ctf-feedback");
+  const ctfConfetti = document.getElementById("ctf-confetti");
+  // UMER{follow_the_red_pixels}
+  const expectedFlagHash =
+    "258dc314a3ab03da14795d2b0182fbb21a7fb529529fd3929c51b9f4232a8fce";
+
+  function hashAsHex(bytes) {
+    return Array.from(new Uint8Array(bytes), (byte) =>
+      byte.toString(16).padStart(2, "0"),
+    ).join("");
+  }
+
+  function playCtfCelebration() {
+    if (reducedMotion.matches) return;
+    ctfConfetti.replaceChildren();
+    for (let index = 0; index < 24; index += 1) {
+      const piece = document.createElement("span");
+      const angle = (Math.PI * 2 * index) / 24;
+      const distance = 45 + Math.random() * 100;
+      piece.className = "ctf-confetti-piece";
+      piece.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+      piece.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+      piece.style.setProperty("--turn", `${Math.random() * 540 - 270}deg`);
+      piece.addEventListener("animationend", () => piece.remove(), {
+        once: true,
+      });
+      ctfConfetti.append(piece);
+    }
+  }
+
+  ctfForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!window.crypto?.subtle) {
+      ctfFeedback.textContent = "SHA-256 checking requires a secure HTTPS page.";
+      ctfFeedback.dataset.state = "error";
+      return;
+    }
+
+    const bytes = new TextEncoder().encode(ctfFlag.value.trim());
+    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
+    const isCorrect = hashAsHex(digest) === expectedFlagHash;
+    ctfFeedback.textContent = isCorrect
+      ? "Congrats! You cracked the hash and found the flag!"
+      : "No match yet. Try another candidate and hash it with SHA-256.";
+    ctfFeedback.dataset.state = isCorrect ? "success" : "error";
+    ctfForm.classList.toggle("is-solved", isCorrect);
+    if (isCorrect) playCtfCelebration();
+  });
+
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.getElementById("site-nav");
   function closeNav() {
