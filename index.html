@@ -518,8 +518,35 @@ ASCII portrait needs JavaScript to appear.</pre
             </article>
           </div>
         </section>
+        <section class="ctf" id="challenge">
+          <!-- UMER{trust_the_first_clue} -->
+          <div class="section-head">
+            <div class="section-kicker">04.</div>
+            <h2>Mini CTF</h2>
+            <div class="rule"></div>
+          </div>
+          <p class="ctf-copy">Found a flag? Enter it below.</p>
+          <form class="ctf-form" id="ctf-form">
+            <label class="ctf-label" for="ctf-flag">Flag</label>
+            <div class="ctf-entry">
+              <input
+                id="ctf-flag"
+                name="flag"
+                type="text"
+                placeholder="Enter flag"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                required
+              />
+              <button class="button" type="submit">Submit <span>↗</span></button>
+            </div>
+            <p class="ctf-feedback" id="ctf-feedback" aria-live="polite"></p>
+            <div class="ctf-confetti" id="ctf-confetti" aria-hidden="true"></div>
+          </form>
+        </section>
         <section class="contact" id="contact">
-          <span class="section-kicker">04. Contact</span>
+          <span class="section-kicker">05. Contact</span>
           <h2>Get in touch.</h2>
           <p>Want to talk about a project? Email me.</p>
           <a class="button" href="mailto:muhammadumerwork2006@gmail.com"
