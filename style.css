@@ -715,6 +715,94 @@ section {
   color: #c0adb1;
   text-transform: uppercase;
 }
+.ctf-copy {
+  margin: -11px 0 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+/* UMER{the_answer_is_in_the_style} */
+.ctf-form {
+  position: relative;
+  max-width: 560px;
+}
+.ctf-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font: 10px var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ctf-entry {
+  display: flex;
+  gap: 10px;
+}
+.ctf-entry input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 11px 13px;
+  background: #100d0f;
+  color: var(--ink);
+  font: 12px var(--mono);
+}
+.ctf-entry input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ctf-entry input::placeholder {
+  color: #887b7f;
+}
+.ctf-feedback {
+  min-height: 1.7em;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font: 11px/1.6 var(--mono);
+}
+.ctf-feedback[data-state="success"] {
+  color: #ff4058;
+  animation: ctf-win 0.45s ease-out both;
+}
+.ctf-form.is-solved .ctf-entry input {
+  border-color: var(--accent);
+  box-shadow: 0 0 22px rgba(227, 27, 54, 0.18);
+}
+.ctf-confetti {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  pointer-events: none;
+}
+.ctf-confetti-piece {
+  position: absolute;
+  width: 7px;
+  height: 11px;
+  border-radius: 1px;
+  background: var(--accent);
+  animation: ctf-burst 1s cubic-bezier(0.16, 0.72, 0.26, 1) forwards;
+}
+.ctf-confetti-piece:nth-child(3n) {
+  background: #f5eff0;
+}
+.ctf-confetti-piece:nth-child(3n + 1) {
+  background: #a80f28;
+}
+@keyframes ctf-burst {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+  to {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.45) rotate(var(--turn));
+  }
+}
+@keyframes ctf-win {
+  0% { transform: scale(0.94); }
+  70% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
 .contact {
   text-align: center;
   padding: 82px 0 100px;
@@ -961,6 +1049,13 @@ section {
   .contact {
     padding: 60px 0 72px;
   }
+  .ctf-entry {
+    flex-wrap: wrap;
+  }
+  .ctf-entry input,
+  .ctf-entry .button {
+    min-height: 44px;
+  }
 }
 @media (max-width: 420px) {
   .shell {
@@ -1031,5 +1126,8 @@ section {
   }
   .ambient span {
     animation: none;
+  }
+  .ctf-confetti {
+    display: none;
   }
 }
