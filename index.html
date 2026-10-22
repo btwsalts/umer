@@ -6,14 +6,10 @@
     <meta name="theme-color" content="#0c090b" />
     <meta
       name="description"
-      content="Umer builds web projects and practical network security tools, including NetScan, a Flask-based TCP port scanner."
+      content="Umer's portfolio: web projects, including NetScan, a small Flask-based TCP port scanner."
     />
     <title>Umer</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="PETRA_ObakePetra_Black_Selected_Gauntlets_NeutralSignature_Original_Original_58_215x240.png"
-    />
+    <link rel="icon" type="image/png" href="petra-portrait.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -33,26 +29,23 @@
           <a href="#about"><span>01.</span> about</a
           ><a href="#work"><span>02.</span> work</a
           ><a href="#contact"><span>03.</span> contact</a>
-          <a class="nav-contact" href="#contact">Say hello <span>↗</span></a>
+          <a class="nav-contact" href="#contact">Connect <span>↗</span></a>
         </nav>
       </header>
       <main>
         <section class="hero" id="home">
           <div class="hero-copy">
-            <div class="eyebrow">Hi, my name is</div>
+            <div class="eyebrow">Web projects / networking</div>
             <h1>Umer.</h1>
-            <h2>I build useful tools<br />for the web.</h2>
+            <h2>Building web tools,<br />one project at a time.</h2>
             <p>
-              I’m a developer exploring web development and network security,
-              building
-              <strong
-                >practical tools with clear, responsive interfaces.</strong
-              >
-              Take a look at what I’ve been working on.
+              I’m learning by making things. My current project is
+              <strong>NetScan</strong>, a small web app for checking common TCP
+              ports on an IPv4 address.
             </p>
             <div class="actions">
-              <a class="button" href="#work">Explore my work <span>↓</span></a
-              ><a class="button secondary" href="#contact">Get in touch</a>
+              <a class="button" href="#work">See NetScan <span>↓</span></a
+              ><a class="button secondary" href="#contact">Connect</a>
             </div>
           </div>
           <div
@@ -62,10 +55,6 @@
             tabindex="0"
           >
             <pre id="ascii" aria-hidden="true"></pre>
-            <div class="art-label">
-              petra / hover to ripple
-              <span aria-hidden="true">↗</span>
-            </div>
           </div>
         </section>
         <section id="about">
@@ -77,21 +66,18 @@
           <div class="about-grid">
             <div class="about-copy">
               <p>
-                Hello, I’m Umer. I build web projects that pair useful
-                functionality with interfaces that are simple to use. My recent
-                work explores network security through small, hands-on tools.
+                I’m Umer. I learn by making things and working through problems.
+                NetScan checks 16 common TCP ports for an IPv4 address and
+                reports the likely services for open ports.
               </p>
               <p>
-                I’m learning by making and improving real projects, with a focus
-                on
-                <strong
-                  >Python, Flask, frontend development, and TCP
-                  networking.</strong
-                >
+                Building it taught me how to connect a browser interface to a
+                Flask API and Python TCP scanner. I’m still learning the
+                networking side.
               </p>
             </div>
             <div>
-              <div class="stack-title">A few things I work with:</div>
+              <div class="stack-title">Tools I used:</div>
               <ul class="stack">
                 <li>Python</li>
                 <li>Flask</li>
@@ -106,55 +92,65 @@
         <section id="work">
           <div class="section-head">
             <div class="section-kicker">02.</div>
-            <h2>Selected work</h2>
+            <h2>Featured project</h2>
             <div class="rule"></div>
           </div>
           <div class="projects">
             <article class="card project-featured">
-              <div class="card-top">
-                <div class="folder" aria-hidden="true">▱</div>
-                <div class="card-links">
-                  <a
-                    href="https://github.com/btwsalts/net-scan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="NetScan source code on GitHub"
-                    >Code ↗</a
-                  >
-                  <a
-                    href="https://btwsalts.github.io/net-scan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open the NetScan live demo"
-                    >Live ↗</a
-                  >
+              <div class="project-copy">
+                <div class="card-top">
+                  <span class="project-index">01 / Network tool</span>
+                  <div class="card-links">
+                    <a
+                      href="https://github.com/btwsalts/net-scan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="NetScan source code on GitHub"
+                      >Code ↗</a
+                    >
+                    <a
+                      href="https://btwsalts.github.io/net-scan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open the NetScan live demo"
+                      >Live ↗</a
+                    >
+                  </div>
+                </div>
+                <h3>NetScan</h3>
+                <p>
+                  Enter an IPv4 address to check 16 common TCP ports. NetScan
+                  reports open ports and their likely services through a simple
+                  browser interface.
+                </p>
+                <div class="tags">
+                  <span>Python</span><span>Flask</span><span>TCP</span>
+                  <span>HTML / CSS / JS</span>
                 </div>
               </div>
-              <h3>NetScan</h3>
-              <p>
-                A lightweight web-based TCP port scanner. Enter an IPv4 address
-                to check common ports and see which services may be reachable.
-                Built as a learning tool for home labs and authorized security
-                testing.
-              </p>
-              <div class="tags">
-                <span>Python</span><span>Flask</span><span>TCP</span
-                ><span>HTML / CSS / JS</span>
+              <div class="project-details">
+                <div class="detail-label">How a scan works</div>
+                <ol class="project-flow">
+                  <li><span>01</span>IPv4 input</li>
+                  <li><span>02</span>Flask API</li>
+                  <li><span>03</span>TCP checks</li>
+                  <li><span>04</span>Results</li>
+                </ol>
+                <p class="project-note">
+                  Made for learning and authorized testing.
+                </p>
               </div>
             </article>
           </div>
         </section>
         <section class="contact" id="contact">
-          <span class="section-kicker">03. What’s next?</span>
-          <h2>Let’s talk.</h2>
-          <p>
-            Have a project in mind, want to work together, or just want to say
-            hello? My inbox is open.
-          </p>
-          <a class="button" href="mailto:hello@example.com"
-            >Say hello <span>↗</span></a
+          <span class="section-kicker">03. Contact</span>
+          <h2>Get in touch.</h2>
+          <p>Want to talk about a project? Email me.</p>
+          <a class="button" href="mailto:muhammadumerwork2006@gmail.com"
+            >muhammadumerwork2006@gmail.com <span>↗</span></a
           >
-          <div class="social-links" aria-label="Social profiles">
+          <div class="social-links" aria-label="LinkedIn and GitHub profiles">
             <a
               href="https://www.linkedin.com/in/muhammad-umer-3607ab371/"
               target="_blank"
@@ -173,7 +169,7 @@
         </section>
       </main>
       <footer class="footer">
-        <span>Designed &amp; built by Umer</span
+        <span>© 2026 Umer. All rights reserved.</span
         ><a href="#home">Back to top ↑</a>
       </footer>
     </div>
