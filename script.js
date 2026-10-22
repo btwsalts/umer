@@ -4,6 +4,23 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   output.replaceChildren();
   output.classList.remove("ascii-fallback");
+
+  document.querySelectorAll(".art-piece img").forEach((image) => {
+    const figure = image.closest(".art-piece");
+    const revealImage = () => figure.classList.remove("is-loading");
+    image.addEventListener("load", revealImage, { once: true });
+    image.addEventListener(
+      "error",
+      () => {
+        figure.classList.remove("is-loading");
+        figure.classList.add("is-error");
+      },
+      { once: true },
+    );
+    if (image.complete) {
+      if (image.naturalWidth) revealImage();
+    }
+  });
   const portrait = [
     {
       line: "                                 .     ...      ",
