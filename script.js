@@ -341,14 +341,14 @@
   const ctfFeedback = document.getElementById("ctf-feedback");
   const ctfConfetti = document.getElementById("ctf-confetti");
   // UMER{follow_the_red_pixels}
-  const expectedFlagHash =
-    "258dc314a3ab03da14795d2b0182fbb21a7fb529529fd3929c51b9f4232a8fce";
-
-  function hashAsHex(bytes) {
-    return Array.from(new Uint8Array(bytes), (byte) =>
-      byte.toString(16).padStart(2, "0"),
-    ).join("");
-  }
+  const flagCipher = [
+    0x0f, 0x17, 0x1f, 0x08, 0x21, 0x6b, 0x34, 0x6f, 0x2a, 0x69, 0x39, 0x6d,
+    0x05, 0x6d, 0x32, 0x69, 0x05, 0x6f, 0x6a, 0x2f, 0x28, 0x39, 0x69, 0x27,
+  ];
+  const xorKey = 0x5a;
+  const expectedFlag = flagCipher
+    .map((byte) => String.fromCharCode(byte ^ xorKey))
+    .join("");
 
   function playCtfCelebration() {
     if (reducedMotion.matches) return;
@@ -368,20 +368,13 @@
     }
   }
 
-  ctfForm.addEventListener("submit", async (event) => {
+  ctfForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!window.crypto?.subtle) {
-      ctfFeedback.textContent = "SHA-256 checking requires a secure HTTPS page.";
-      ctfFeedback.dataset.state = "error";
-      return;
-    }
-
-    const bytes = new TextEncoder().encode(ctfFlag.value.trim());
-    const digest = await window.crypto.subtle.digest("SHA-256", bytes);
-    const isCorrect = hashAsHex(digest) === expectedFlagHash;
+    const isCorrect =
+      ctfFlag.value.trim().toLowerCase() === expectedFlag.toLowerCase();
     ctfFeedback.textContent = isCorrect
-      ? "Congrats! You cracked the hash and found the flag!"
-      : "No match yet. Try another candidate and hash it with SHA-256.";
+      ? "Congrats! You found the flag!"
+      : "That flag doesn't match. Try again.";
     ctfFeedback.dataset.state = isCorrect ? "success" : "error";
     ctfForm.classList.toggle("is-solved", isCorrect);
     if (isCorrect) playCtfCelebration();
