@@ -426,8 +426,17 @@ section {
 .brand-section .section-head {
   margin-bottom: 18px;
 }
+.brand-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+  padding-bottom: 28px;
+}
 .brand-viewport {
-  position: relative;
+  display: flex;
+  min-height: 94px;
+  margin: auto 0;
+  align-items: center;
   overflow: hidden;
   padding: 16px 0;
   border-block: 1px solid var(--line);
@@ -436,6 +445,7 @@ section {
 }
 .brand-track {
   display: flex;
+  align-items: center;
   width: max-content;
   animation: brand-scroll 36s linear infinite;
   will-change: transform;
